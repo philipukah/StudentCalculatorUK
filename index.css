@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 210 100% 35%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 120 61% 34%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    /* ... keep existing code (dark mode variables) */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles */
+.form-container {
+  @apply max-w-3xl mx-auto w-full;
+}
+
+.step-indicator {
+  @apply flex justify-between items-center mb-8 px-2;
+}
+
+.step {
+  @apply flex flex-col items-center;
+}
+
+.step-circle {
+  @apply w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold mb-2 transition-all duration-300;
+}
+
+.step-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.step-completed {
+  @apply bg-secondary text-secondary-foreground;
+}
+
+.step-inactive {
+  @apply bg-muted text-muted-foreground;
+}
+
+.step-line {
+  @apply flex-1 h-1 bg-border;
+}
+
+.step-line-active {
+  @apply bg-primary;
+}
+
+.input-group {
+  @apply mb-4;
+}
+
+.result-section {
+  @apply border rounded-lg p-6 mb-4;
+}
+
+.result-total {
+  @apply text-xl font-bold mt-6 p-4 rounded-lg bg-primary/10 flex justify-between;
+}
